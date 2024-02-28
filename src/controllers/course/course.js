@@ -42,7 +42,7 @@ export const addCourse = asyncHandler(async (req, res, next) => {
 
   // Check if instructorId is provided and valid
   if (instructorId) {
-    const instructor = await adminModel.findById(instructorId);
+    const instructor = await InstructorModel.findById(instructorId);
     if (!instructor || instructor.role !== "instructor") {
       return next(new Error("Invalid instructorId", { status: 404 }));
     }
