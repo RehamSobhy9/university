@@ -12,16 +12,14 @@ import morgan from "morgan";
 import { hellowpage } from "./utils/templetHtml.js";
 
 export const bootstrap = (app, express) => {
-  const allowedOrigins = [
-    "http://localhost:3000",
-    "https://graduation-project-beryl-seven.vercel.app",
-  ];
-
-  app.use(
-    cors({
-      origin: allowedOrigins,
-    })
-  );
+  // const allowedOrigins = [
+  //   "http://localhost:3000",
+  //   "https://graduation-project-beryl-seven.vercel.app",
+  // ];
+// {
+//       origin: allowedOrigins,
+//     }
+  app.use(cors());
 
   //Allow feaching Data
   app.use(express.json());
