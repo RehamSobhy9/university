@@ -13,7 +13,7 @@ export const isAuth = (roles) => {
     //check token send
     if (!accessToken || !refreshToken) {
       return next(
-        new Error("Please login first && refreshToken accessToken reqired ", {
+        new Error("Please login first OR refreshToken accessToken Not found ", {
           cause: 400,
         })
       );

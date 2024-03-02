@@ -156,14 +156,22 @@ export const searchcourse = asyncHandler(async (req, res, next) => {
     req.query,
     allowFields
   )
+    .search(searchFields)
     .pagination()
     .sort()
     .select()
-    .search(searchFields)
     .filter();
 
   const course = await apiFeatureInstance.MongoseQuery;
+
   return res
     .status(200)
     .json({ message: "Done All courses Information", course });
+});
+
+export const count = asyncHandler(async (req, res, next) => {
+  console.log(req.query.num);
+  const count = await CourseModel.find().countDocuments({});
+  console.log(count);
+  return res.json({ count: count });
 });

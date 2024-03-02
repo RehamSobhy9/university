@@ -34,5 +34,7 @@ router.get(
   isAuth([roles.admin, roles.instructor]),
   cc.searchcourse
 );
+
+// router.get("/count", cc.count);
 // missed login with Gmail   <<<<=====
 export default router;
